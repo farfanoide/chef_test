@@ -1,0 +1,16 @@
+{
+  "name": "web" ,
+  "description": "The base role for systems that serve web server " ,
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+    "apache": {
+      "listen_ports": [ "80" , "443" ]
+    }
+  },
+  "run_list": [
+    "recipe[apache2]",
+    "recipe[apache2::mod_php5]",
+    "recipe[apache2::mod_rewrite]"
+    ]
+}
